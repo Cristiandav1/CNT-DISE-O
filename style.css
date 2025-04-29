@@ -1,0 +1,216 @@
+/* === FUENTES PERSONALIZADAS === */
+@font-face {
+    font-family: fuente1; /* Fuente decorativa para el título */
+    src: url(fuentes/DancingScript-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: fuente2; /* Fuente moderna para todo el contenido */
+    src: url(fuentes/Candal-Regular.ttf);
+}
+
+/* === CUERPO DE LA PÁGINA === */
+body {
+    overflow: hidden; /* Oculta el scroll para mantener la estética fija */
+    margin: 0; /* Elimina márgenes predeterminados del navegador */
+    font-family: fuente2, sans-serif; /* Fuente general */
+    background: linear-gradient(135deg, #bbdefb, #64b5f6); /* Fondo degradado azul */
+    color: #003b5c; /* Color de texto por defecto */
+    height: 100vh; /* Altura del viewport */
+    position: relative; /* Necesario para posicionar elementos dentro */
+}
+
+/* === BARRA SUPERIOR (Logo y título) === */
+.barra-superior {
+    background-color: #e3f2fd; /* Fondo claro */
+    display: flex; /* Alineación horizontal */
+    align-items: center; /* Centrado vertical */
+    padding: 10px;
+    color: #004d40;
+}
+.barra-superior img {
+    height: 90px; /* Tamaño del logo */
+    margin-right: 30px; /* Separación del texto */
+}
+.barra-superior span {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: fuente1, cursive; /* Fuente decorativa */
+}
+
+/* === MENÚ DE NAVEGACIÓN === */
+header {
+    background-color: #0288d1;
+    padding: 10px;
+    text-align: center;
+}
+nav {
+    display: flex;
+    justify-content: center; /* Centra los enlaces */
+    gap: 20px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+nav a:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Efecto al pasar el mouse */
+    transform: scale(1.1); /* Efecto de zoom */
+}
+
+/* === CONTENIDO PRINCIPAL === */
+.contenido {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 30px; /* Separa del header */
+}
+
+/* === IMAGEN DECORATIVA IZQUIERDA === */
+.decorativo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%; /* Ajuste de tamaño más pequeño */
+    max-height: 90%;
+    overflow: hidden;
+}
+.decorativo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* === IMAGEN DERECHA === */
+.imagen-derecha {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width:25%; /* Igual que la izquierda */
+    max-height: 90%;
+}
+.imagen-derecha img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* === TEXTO CENTRAL === */
+.zona-central {
+    text-align: center;
+    z-index: 2;
+    max-width: 700px;
+    margin-top: 30px; /* Lo sube más */
+}
+.zona-central h1 {
+    font-size: 2.5em;
+    color: #01579b;
+    margin: 0;
+}
+.zona-central p {
+    font-size: 1.1em;
+    color: #0277bd;
+    margin-top: 5px;
+}
+
+/* === TARJETAS DE INFORMACIÓN === */
+.info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 9;
+    margin-top: 7%; /* Menor margen para estar más arriba */
+}
+.card {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    width: 220px;
+    color: #003b5c;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    font-size: 0.9em;
+}
+.card:hover {
+    transform: scale(1.03);
+    background-color: #e3f2fd;
+}
+.card h2 {
+    margin-top: 0;
+    color: #0277bd;
+    font-size: 1.2em;
+}
+.card p {
+    font-size: 0.95em;
+    color: #004d40;
+}
+
+/* === CÍRCULOS FLOTANTES === */
+.circulos .circulo {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: flotar 2s ease-in-out infinite alternate;
+    z-index: 0;
+}
+.circulo.pequeno {
+    width: 60px;
+    height: 60px;
+    background-color: #039be5;
+}
+.circulo.mediano {
+    width: 90px;
+    height: 90px;
+    background-color: #0288d1;
+}
+
+/* === POSICIÓN Y RETARDO DE CADA CÍRCULO === */
+.circulo.uno { top: 20%; left: 50%; animation-delay: 0.5s; }
+.circulo.dos { top: 30%; right: 40%; animation-delay: 2s; }
+.circulo.tres { top: 40%; left: 30%; animation-delay: 1.5s; }
+.circulo.cuatro { top: 50%; left: 60%; animation-delay: 3s; }
+.circulo.cinco { top: 60%; right: 50%; animation-delay: 1s; }
+.circulo.seis { top: 70%; left: 10%; animation-delay: 2.5s; }
+.circulo.siete { top: 80%; left: 60%; animation-delay: 3.5s; }
+
+/* === ANIMACIÓN DE FLOTACIÓN === */
+@keyframes flotar {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-40px) scale(1.2); }
+}
+
+/* === PIE DE PÁGINA === */
+footer {
+    width: 100%;
+    background-color: #0288d1;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+}
+footer .footer-bar p {
+    font-size: 1.2em;
+    color: white;
+}
+
+/* === ADAPTACIÓN RESPONSIVA PARA CELULARES === */
+@media (max-width: 768px) {
+    .barra-superior span {
+        font-size: 28px;
+    }
+    .imagen-derecha, .decorativo {
+        display: none; /* Oculta imágenes laterales en pantallas pequeñas */
+    }
+    .info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
